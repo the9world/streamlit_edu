@@ -1,3 +1,7 @@
+# 가상환경 세팅
+# $ python --version  버전확인  
+# $ conda create -n app_dash python=3.9 openssl numpy scipy matplotlib ipython scikit-learn pandas pillow jupyter seaborn  
+
 import streamlit as st # error 밑줄이 있어야 정상
 # 코드 처리해주는 인터프리터는 'base':conda
 
