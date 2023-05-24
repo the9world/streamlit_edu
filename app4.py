@@ -1,3 +1,4 @@
+from numpy import column_stack
 import streamlit as st # 코드 처리해주는 인터프리터는 'base':conda
 import pandas as pd
 
@@ -54,6 +55,21 @@ def main() :
     elif selected_lang == 'PHP' :
         st.text('PHP말고 Python을 배워')
 
+    # 데이터 프레임의 컬럼이름을 보여주고,
+    # 유저가 컬럼을 선택하면
+    # 해당 컬럼만 가져와서 데이터프레임을 보여주고 싶다.
+    column_list= st.multiselect('컬럼을 선택하세요', df.columns)
+    print(column_list)
+    
+        # 선택한 컬럼으로 데이터프레임을 보여주고 싶다.
+    st.dataframe(df[column_list])
+     # slider(좌우드래그볼) (최소치, 맥스치, 스탭, 최초값)
+    age= st.slider("나이", min_value=10, max_value=150, step=2, value=50)
+    st.text(f'나이는 {age} 입니다.') # or ('나이는'+ str(age)+ '입니다.') 문자+숫자 유의
+    
+    with st.expander('hello'): # with 알아보기// hello 누르면 밑에 실행?
+        st.text('안녕하세요')
+                    
 if __name__ == '__main__': # app 실행 한게 main이면 위에 있는 main 함수를 실행하라.
     main()
 # $ streamlit run app.py
