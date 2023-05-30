@@ -3,7 +3,6 @@
 # altair viz : Vega-Altair
 
 import streamlit as st
-import plotly
 import plotly.express as px
 import altair as alt
 import pandas as pd 
